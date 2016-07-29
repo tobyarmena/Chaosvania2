@@ -1,0 +1,2 @@
+hp -= argument0
+
