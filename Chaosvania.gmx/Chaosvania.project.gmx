@@ -61,8 +61,10 @@
       <sprite>sprites\spr_vanish</sprite>
       <sprite>sprites\spr_wallenemy</sprite>
       <sprite>sprites\spr_proxenemy</sprite>
+      <sprite>sprites\spr_largeshoot</sprite>
       <sprite>sprites\spr_trackingshoot</sprite>
       <sprite>sprites\spr_basicshootproj</sprite>
+      <sprite>sprites\spr_largeshootproj</sprite>
       <sprite>sprites\spr_stationaryshootproj</sprite>
       <sprite>sprites\spr_wallshootproj</sprite>
       <sprite>sprites\spr_trackingshootproj</sprite>
@@ -260,6 +262,10 @@
       <objects name="Basic Shoot Enemy (Quin Shot)">
         <object>objects\obj_basicshoot3</object>
         <object>objects\obj_basicshootproj3</object>
+      </objects>
+      <objects name="Large Shoot Enemy">
+        <object>objects\obj_largeshoot</object>
+        <object>objects\obj_largeshootproj</object>
       </objects>
       <objects name="Tracking Shoot Enemy">
         <object>objects\obj_trackingshoot</object>
