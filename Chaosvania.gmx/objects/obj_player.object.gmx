@@ -42,11 +42,11 @@ created = false
 
 instance_create(x,y,obj_camera)
 instance_create(x,y,obj_inv)
-instance_create(x,y,obj_decalsurface)
 instance_create(x,y,obj_time)
 instance_create(x,y,obj_control)
 instance_create(x,y,obj_grid)
 instance_create(x,y,obj_lighting)
+instance_create(x,y,obj_screen_fader)
 
 
 instance_create(x,y,obj_head)
@@ -256,13 +256,11 @@ scr_drawlighting_circle(x,y,4,1)
 
 if instance_exists(par_interactable)
     {
-    show_debug_message("exisrs")
     with(par_interactable){closest = false}
     chosen = instance_nearest(x,y,par_interactable)
     with(chosen)
         {
         closest = true
-        show_debug_message(string(object_get_name(object_index)))
         }
     }
 

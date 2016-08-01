@@ -25,10 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>shake = false
-magnitude = 5
-xx = obj_player.x + (mouse_x - obj_player.x)/4
-yy = obj_player.y + (mouse_y - obj_player.y)/3
+            <string>alpha = 0
+state = "idle"
+changed = false
 </string>
           </argument>
         </arguments>
@@ -51,7 +50,7 @@ yy = obj_player.y + (mouse_y - obj_player.y)/3
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>shake = false
+            <string>state = "lightening"
 </string>
           </argument>
         </arguments>
@@ -74,47 +73,40 @@ yy = obj_player.y + (mouse_y - obj_player.y)/3
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(obj_player)
-if global.paused = false
+            <string>if state == "darkening"
     {
-    if obj_player.state == "upgrading"
+    alpha = min(1,alpha + 0.05)
+    }
+else if state == "lightening"
+    {
+    alpha = max(0,alpha - 0.05)
+    }
+
+if alpha &gt;= 1
+    {
+    if !alarm[0]
+        alarm[0] = 15
+    if changed = false
         {
-        followspeed = 10
-        xx = obj_player.x
-        yy = obj_player.y
-        }
-    else if obj_player.state == "talking"
-        {
-        followspeed = 10
-        xx = obj_player.npc.x
-        yy = obj_player.npc.y
-        }
-    else
-        {
-        followspeed = 2
-        xx = obj_player.x + (mouse_x - obj_player.x)/4
-        yy = obj_player.y + (mouse_y - obj_player.y)/3
-        
-        if shake == true
+        with(instance_nearest(obj_player.x,obj_player.y,par_gotoroom))
             {
-            x += irandom_range(-magnitude,magnitude)
-            y += irandom_range(-magnitude,magnitude)
+            activate = true
             }
+        changed = true
         }
-        
-    
-    x += (xx-x)/followspeed
-    y += (yy-y)/followspeed
     
     }
-    
-    
+else if alpha &lt;= 0
+    {
+    state = "idle"
+    changed = false
+    }  
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="4">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -131,8 +123,14 @@ if global.paused = false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = xx
-y = yy
+            <string>if alpha &gt; 0
+    {
+    draw_set_color(c_black)
+    draw_set_alpha(alpha)
+    draw_rectangle(0,0,display_get_gui_width(),display_get_gui_height(),false)
+    draw_set_alpha(1)
+    draw_set_color(c_white)
+    }
 </string>
           </argument>
         </arguments>

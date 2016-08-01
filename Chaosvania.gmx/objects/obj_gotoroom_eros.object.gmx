@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room1 = rm_test
+            <string>event_inherited()
+
+room1 = rm_test
 room1_x = 2240
 room1_y = 1152
 

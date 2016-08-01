@@ -496,7 +496,7 @@ if global.paused == true
         var save = background_add("pausescreen.png",false,false)
         surface_set_target(pause_screen)
         if background_exists(save)
-        draw_background(save,0,0)
+            draw_background(save,0,0)
         surface_reset_target()
         }
     draw_set_color(c_black);

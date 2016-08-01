@@ -1,5 +1,12 @@
-room_goto(global.startroom)
-with(obj_control)
+if room != rm_startmenu
     {
-    alarm[4] = 1
+    room_goto(global.startroom)
+    with(obj_control)
+        {
+        alarm[4] = 1
+        }
+    }
+else
+    {
+    game_end()
     }

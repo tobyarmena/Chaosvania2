@@ -93,6 +93,7 @@
     <sprite>sprites\sprite56</sprite>
     <sprite>sprites\spr_minigun_projectile</sprite>
     <sprite>sprites\spr_impact</sprite>
+    <sprite>sprites\spr_decal_area</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_test</background>
@@ -325,6 +326,10 @@
     <object>objects\obj_minigun_impact</object>
     <object>objects\obj_throw</object>
     <object>objects\par_interactable</object>
+    <object>objects\obj_decalsurface2</object>
+    <object>objects\obj_decal_canvas</object>
+    <object>objects\par_decal_canvas</object>
+    <object>objects\obj_screen_fader</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_startmenu</room>
