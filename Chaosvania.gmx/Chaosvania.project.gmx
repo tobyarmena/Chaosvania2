@@ -290,6 +290,7 @@
       </objects>
       <objects name="Teleport Charge Enemy">
         <object>objects\obj_teleport</object>
+        <object>objects\obj_teleportproj</object>
       </objects>
       <objects name="Proximity Enemy">
         <object>objects\obj_proxenemy</object>

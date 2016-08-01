@@ -172,7 +172,7 @@ if (follow == true){
             //if the wait time is up, enemy will shoot
             if (canShoot == true){
                 canShoot = false;
-                scr_shootbasic(obj_basicshootproj,500);
+                scr_shootbasic(obj_teleportproj,500);
                 alarm[0] = 90;
             }
         }
