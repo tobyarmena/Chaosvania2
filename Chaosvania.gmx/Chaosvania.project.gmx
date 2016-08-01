@@ -288,6 +288,9 @@
       <objects name="Vanish Charge Enemy">
         <object>objects\obj_vanish</object>
       </objects>
+      <objects name="Teleport Charge Enemy">
+        <object>objects\obj_teleport</object>
+      </objects>
       <objects name="Proximity Enemy">
         <object>objects\obj_proxenemy</object>
       </objects>
