@@ -262,8 +262,8 @@ else if obj_player.state == "pushing"
     {
     if index == "right"
         {
-        x = basex + lengthdir_x(43,obj_player.direction)-lengthdir_x(16,xaxis)
-        y = basey + lengthdir_y(43,obj_player.direction)-lengthdir_y(16,yaxis)
+        x = basex + lengthdir_x(18,obj_player.direction)-lengthdir_x(10,xaxis)
+        y = basey + lengthdir_y(18,obj_player.direction)-lengthdir_y(10,xaxis)
         }
     else
         {
