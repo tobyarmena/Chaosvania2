@@ -88,8 +88,12 @@ if yChoose == 2{
 newX = obj_player.x + xx;
 newY = obj_player.y + yy;
 
-newPos = false;
-canTele = true;
+if place_empty(newX,newY){
+    newPos = false;
+    canTele = true;
+}
+else
+    alarm[2] = 1;
 </string>
           </argument>
         </arguments>
