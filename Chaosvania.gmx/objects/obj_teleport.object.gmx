@@ -34,6 +34,8 @@ timer = 1;
 //teleport variable
 canTele = false;
 newPos = true;
+xChoose = 0;
+yChoose = 0;
 //If enemy should follow variable
 follow = false;
 //Shooting Variable
@@ -62,8 +64,26 @@ dealDamage = true
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>xx = irandom_range(-300,300);
-yy = irandom_range(-300,300);
+            <string>xChoose = choose(1,2);
+yChoose = choose(1,2);
+
+if xChoose == 1{
+    xx = irandom_range(350,250);
+    xChoose = 0;
+}
+if xChoose == 2{
+    xx = irandom_range(-350,-250);
+    xChoose = 0;
+}
+        
+if yChoose == 1{
+    yy = irandom_range(350,250);
+    yChoose = 0;
+}
+if yChoose == 2{
+    yy = irandom_range(-350,-250);
+    yChoose = 0;
+}
 
 newX = obj_player.x + xx;
 newY = obj_player.y + yy;
@@ -151,7 +171,7 @@ if (follow == true){
     scr_turn(point_direction(x,y,obj_player.x,obj_player.y),10);
     phy_rotation = -direction
     //if enemy is too close, teleport
-    if distance_to_object(obj_player) &lt;= 200{
+    if distance_to_object(obj_player) &lt;= 230{
         if newPos{
             if !alarm[2]  
                 alarm[2] = 1;
