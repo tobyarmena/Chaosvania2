@@ -84,7 +84,7 @@ tick=0
           <argument>
             <kind>1</kind>
             <string>
-if obj_player.state == "action" || obj_player.state == "upgrading" || obj_player.state == "pickup"
+if obj_player.state == "action" || obj_player.state == "upgrading" || obj_player.state == "pickup" || obj_player.state == "pushing"
 {
 
 spd=20

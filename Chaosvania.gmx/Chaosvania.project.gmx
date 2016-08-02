@@ -94,6 +94,7 @@
     <sprite>sprites\spr_minigun_projectile</sprite>
     <sprite>sprites\spr_impact</sprite>
     <sprite>sprites\spr_decal_area</sprite>
+    <sprite>sprites\spr_push_block</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_test</background>
@@ -126,6 +127,7 @@
     </scripts>
     <scripts name="Player Scripts">
       <script>scripts\scr_facedirection.gml</script>
+      <script>scripts\scr_facedirection2.gml</script>
       <script>scripts\scr_turn_legs.gml</script>
       <script>scripts\scr_shoot_draw.gml</script>
       <script>scripts\scr_turn.gml</script>
@@ -334,6 +336,7 @@
     <object>objects\obj_decal_canvas</object>
     <object>objects\par_decal_canvas</object>
     <object>objects\obj_screen_fader</object>
+    <object>objects\obj_pushblock</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_startmenu</room>

@@ -99,7 +99,7 @@ alarm[0] = swayspeed
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if obj_player.state == "action"
+            <string>if obj_player.state == "action" || obj_player.state == "pushing"
     {
     if index == "left"
         {
@@ -258,6 +258,19 @@ else if obj_player.state == "pickup"
         y = basey +lengthdir_y(sin(stepcount)*1.5,xaxis) +lengthdir_y(cos(stepcount),yaxis)
         }
     }
+else if obj_player.state == "pushing"
+    {
+    if index == "right"
+        {
+        x = basex + lengthdir_x(43,obj_player.direction)-lengthdir_x(16,xaxis)
+        y = basey + lengthdir_y(43,obj_player.direction)-lengthdir_y(16,yaxis)
+        }
+    else
+        {
+        x = basex
+        y = basey
+        }
+    }
 //Set direction
 if obj_player.state == "action" 
     {
@@ -285,6 +298,13 @@ else if obj_player.state == "talking" || obj_player.state == "upgrading"
 else if obj_player.state == "pickup"
     {
     direction = yaxis - 30*whichside
+    }
+else if obj_player.state == "pushing"
+    {
+    if index == "right"
+        direction = obj_player.direction-45
+    if index == "left"
+        direction = obj_player.direction+45
     }
 image_angle = direction        
 
