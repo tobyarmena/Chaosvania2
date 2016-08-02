@@ -95,6 +95,7 @@
     <sprite>sprites\spr_impact</sprite>
     <sprite>sprites\spr_decal_area</sprite>
     <sprite>sprites\spr_push_block</sprite>
+    <sprite>sprites\spr_roll</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_test</background>
@@ -337,6 +338,7 @@
     <object>objects\par_decal_canvas</object>
     <object>objects\obj_screen_fader</object>
     <object>objects\obj_pushblock</object>
+    <object>objects\obj_ballspin</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_startmenu</room>
