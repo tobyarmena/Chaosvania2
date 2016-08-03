@@ -41,7 +41,8 @@ else if state == "idle"
         var collision_enemy = (position_meeting(temp_x, temp_y, par_enemies))
         var tracking_bullet = (position_meeting(temp_x, temp_y, obj_trackingshootproj))
         var large_bullet = (position_meeting(temp_x, temp_y, obj_largeshootproj))
-        while (!collision && !collision_enemy && !tracking_bullet && !large_bullet && distance_to_point(temp_x,temp_y) < view_wview)
+        var orbit_bullet = (position_meeting(temp_x, temp_y, obj_orbitingproj))
+        while (!collision && !collision_enemy && !tracking_bullet && !orbit_bullet && !large_bullet && distance_to_point(temp_x,temp_y) < view_wview)
             {
             temp_x += lengthdir_x(4, temp_dir)
             temp_y += lengthdir_y(4, temp_dir)
@@ -49,6 +50,7 @@ else if state == "idle"
             collision_enemy = (position_meeting(temp_x, temp_y, par_enemies))
             tracking_bullet = (position_meeting(temp_x, temp_y, obj_trackingshootproj))
             large_bullet = (position_meeting(temp_x, temp_y, obj_largeshootproj))
+            orbit_bullet = (position_meeting(temp_x, temp_y, obj_orbitingproj))
             }
         /*
         //knockback on player

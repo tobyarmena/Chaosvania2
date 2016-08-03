@@ -69,6 +69,7 @@
       <sprite>sprites\spr_stationaryshootproj</sprite>
       <sprite>sprites\spr_wallshootproj</sprite>
       <sprite>sprites\spr_trackingshootproj</sprite>
+      <sprite>sprites\spr_orbitingproj</sprite>
     </sprites>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_circle_light_cookie</sprite>
@@ -301,6 +302,7 @@
       </objects>
       <objects name="Orbiting Enemy">
         <object>objects\obj_orbit</object>
+        <object>objects\obj_orbitingproj</object>
       </objects>
     </objects>
     <objects name="RoomChangers">
