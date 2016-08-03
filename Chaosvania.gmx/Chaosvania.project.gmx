@@ -338,7 +338,7 @@
     <object>objects\par_decal_canvas</object>
     <object>objects\obj_screen_fader</object>
     <object>objects\obj_pushblock</object>
-    <object>objects\obj_ballspin</object>
+    <object>objects\obj_bbHead</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_startmenu</room>

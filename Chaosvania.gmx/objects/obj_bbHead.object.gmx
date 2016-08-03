@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>par_interactable</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -31,6 +31,86 @@ image_speed = 0
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>picked = false
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if keyboard_check_pressed(ord("E")) &amp;&amp; distance_to_object(obj_player)&lt;5 &amp;&amp; closest == true
+{
+    if !picked{
+    picked = true;
+    obj_player.state = "pickup"
+    anchordir = phy_rotation-obj_player.phy_rotation
+    }
+    else if picked{
+    picked = false
+    obj_player.state = "action"
+    }
+
+}    
+
+if picked
+    {
+        depth = 0
+        anchorx = obj_player.x-obj_arm_left.x
+        phy_position_x = obj_player.x + lengthdir_x(50,-obj_player.phy_rotation)+obj_arm_left.x-obj_arm_left.basex;
+        phy_position_y = obj_player.y + lengthdir_y(50,-obj_player.phy_rotation)+obj_arm_left.y-obj_arm_left.basey;
+        phy_rotation = obj_player.phy_rotation+anchordir;
+        phy_speed_x = 0;
+        phy_speed_y = 0;
+        phy_angular_velocity = 0;
+        if mouse_check_button_pressed(mb_left)
+        {
+            picked = false;
+            obj_player.state = "action";
+            physics_apply_impulse(x,y,lengthdir_x(10000,-obj_player.phy_rotation)+obj_player.phy_speed_x*1000,lengthdir_y(10000,-obj_player.phy_rotation)+obj_player.phy_speed_y*1000)
+        }
+    }
+else
+    {
+    depth = 2
+    }
+
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="3" enumb="0">
       <action>
@@ -51,11 +131,15 @@ image_speed = 0
             <kind>1</kind>
             <string>
 if phy_speed&gt;0.2{
-phy_rotation = -point_direction(phy_position_xprevious,phy_position_yprevious
-                                ,phy_position_x ,phy_position_y)
+phy_rotation = -point_direction(phy_position_xprevious,phy_position_yprevious,phy_position_x ,phy_position_y);
                                 }
+
                                 
-image_speed = min(phy_speed/5,2)
+if phy_speed&gt;0.1{                          
+    image_speed = min(phy_speed/5,2);
+    }
+else
+    image_speed = 0;
 </string>
           </argument>
         </arguments>
@@ -78,7 +162,16 @@ image_speed = min(phy_speed/5,2)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//421421421
+            <string>if picked{
+    picked = false;
+    physics_apply_impulse(x,y,20,20);
+    }
+/*  
+if !picked &amp;&amp; phy_speed &gt; 1
+{
+    effect_create_above(ef_explosion,x,y,4,c_red)
+    instance_destroy()
+}*/
 </string>
           </argument>
         </arguments>
@@ -121,7 +214,7 @@ image_speed = min(phy_speed/5,2)
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>16,16</point>
-    <point>16,16</point>
+    <point>24,26</point>
+    <point>20,16</point>
   </PhysicsShapePoints>
 </object>
