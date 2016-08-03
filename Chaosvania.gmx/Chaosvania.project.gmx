@@ -61,6 +61,7 @@
       <sprite>sprites\spr_vanish</sprite>
       <sprite>sprites\spr_wallenemy</sprite>
       <sprite>sprites\spr_proxenemy</sprite>
+      <sprite>sprites\spr_orbit</sprite>
       <sprite>sprites\spr_largeshoot</sprite>
       <sprite>sprites\spr_trackingshoot</sprite>
       <sprite>sprites\spr_basicshootproj</sprite>
@@ -297,6 +298,9 @@
       </objects>
       <objects name="Proximity Enemy">
         <object>objects\obj_proxenemy</object>
+      </objects>
+      <objects name="Orbiting Enemy">
+        <object>objects\obj_orbit</object>
       </objects>
     </objects>
     <objects name="RoomChangers">
